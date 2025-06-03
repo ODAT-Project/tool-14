@@ -1,0 +1,26 @@
+
+--- Combined Model Training Report ---
+Dataset Shape (after initial cleaning): (2005, 27)
+Target Event Column: Cardiovascular_mortality, Time Column: Time_to_CVD_mortality_days
+
+Risk Score Model (Gradient Boosting Survival Analysis):
+  Features used: 2
+  Hyperparameters: Estimators=100, MaxDepth=3, LearningRate=0.1
+
+CPH Model:
+  Features used (incl. GBSA score): 4
+  Linear CPH Features: ['Hypertension', 'Smoking_Status', 'Statins_and_fibrates']
+  CPH L2 Penalizer: 0.1
+
+CPH Model Summary (Hazard Ratios):
+                covariate  exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%            p
+             Hypertension   1.298287             1.044957             1.613032 1.842159e-02
+           Smoking_Status   0.928263             0.858543             1.003645 6.167541e-02
+     Statins_and_fibrates   1.192558             1.005560             1.414332 4.300312e-02
+GBSA_Risk_Score_Covariate   2.525443             1.961328             3.251807 6.835506e-13
+
+CPH Performance on Test Set:
+  Concordance Index (C-index): 0.6427
+--- End of Report ---
+-----------------------
+--- by ODAT project ---
